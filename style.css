@@ -1,0 +1,12 @@
+#login-area {
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px #efefef;
+    width: 500px;
+}
+
+.jumbotron {
+    background: url("https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=667&q=80")
+        no-repeat center center/cover;
+    color: white;
+}
