@@ -1,3 +1,6 @@
 document.getElementById("submit").addEventListener("click", () => {
-    console.log("I am the best programmer in the world!");
+    // This will hide the welcome section
+    document.getElementById("welcome-section").style.display = "none";
+    // This will show the inner section
+    document.getElementById("transaction-area").style.display = "block";
 });

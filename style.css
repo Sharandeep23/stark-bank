@@ -10,3 +10,7 @@
         no-repeat center center/cover;
     color: white;
 }
+
+#transaction-area {
+    display: none;
+}
