@@ -10,18 +10,15 @@ document.getElementById("submit").addEventListener("click", () => {
 document.getElementById("addDeposit").addEventListener("click", () => {
     // .value is input elements
     // .innerText is for other
-    // Its because things don't work in setting thats why full form
-    let depositAmount = parseFloat(document.getElementById("depositAmount").value);
-    let currentDeposit = parseFloat(document.getElementById("currentDeposit").innerText);
-    let currentBalance = parseFloat(document.getElementById("currentBalance").innerText);
+    let depositAmount = getAmount("depositAmount");
 
     // Adding Deposit
-    document.getElementById("currentDeposit").innerText = depositAmount + currentDeposit;
+    updateAmount("currentDeposit", depositAmount);
 
     // Adding Balance
-    document.getElementById("currentBalance").innerText = currentBalance + depositAmount;
+    updateAmount("currentBalance", depositAmount);
 
-    // Reseting the input form
+    // Resetting the input form
     document.getElementById("depositAmount").value = "";
 });
 
@@ -29,17 +26,23 @@ document.getElementById("addDeposit").addEventListener("click", () => {
 document.getElementById("addWithdraw").addEventListener("click", () => {
     // .value is input elements
     // .innerText is for other
-    // Its because things don't work in setting thats why full form
-    let withdrawAmount = parseFloat(document.getElementById("withdrawAmount").value);
-    let currentWithdraw = parseFloat(document.getElementById("currentWithdraw").innerText);
-    let currentBalance = parseFloat(document.getElementById("currentBalance").innerText);
+    let withdrawAmount = getAmount("withdrawAmount");
 
     // Adding Withdraw
-    document.getElementById("currentWithdraw").innerText = withdrawAmount + currentWithdraw;
+    updateAmount("currentWithdraw", withdrawAmount);
 
     // Subtracting Balance
-    document.getElementById("currentBalance").innerText = currentBalance - withdrawAmount;
+    updateAmount("currentBalance", withdrawAmount * -1);
 
-    // Reseting the input form
+    // Resetting the input form
     document.getElementById("withdrawAmount").value = "";
 });
+
+function getAmount(id) {
+    return parseFloat(document.getElementById(id).value);
+}
+
+function updateAmount(id, amount) {
+    let idAmount = parseFloat(document.getElementById(id).innerText);
+    document.getElementById(id).innerText = idAmount + amount;
+}
